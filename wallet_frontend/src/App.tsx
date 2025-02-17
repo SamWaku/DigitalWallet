@@ -6,8 +6,8 @@ import "./App.css";
 
 import Register from "./pages/Register";
 import NavBar from "./components/NavBar";
-import Wallet from "./components/Wallet";
-import WalletTransaction from "./components/WalletTransaction";
+import Wallet from "./pages/Wallet";
+import WalletTransaction from "./pages/WalletTransaction";
 
 function App() {
   return (

@@ -11,6 +11,8 @@ const Register = () => {
   const [Username, setName] = useState("");
   const token = Cookies.get("token");
   const user = !!token;
+
+  const API_BASE_URL = import.meta.env.BACKEND_API_URL;
   useEffect(() => {
     if (user) {
       window.location.href = "/dashboard/:id";
@@ -22,14 +24,11 @@ const Register = () => {
       setError("Please fill out the missing fields!");
     } else {
       try {
-        const response = await axios.post(
-          "http://localhost:5143/api/register",
-          {
-            Username,
-            Email,
-            Password,
-          }
-        );
+        const response = await axios.post(`${API_BASE_URL}/api/register`, {
+          Username,
+          Email,
+          Password,
+        });
 
         if (response.status === 201) {
           alert("Registration successful");

@@ -9,6 +9,9 @@ const Login = () => {
   const [error, setError] = useState("");
   const token = Cookies.get("token");
   const user = !!token;
+
+  const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
+
   useEffect(() => {
     if (user) {
       window.location.href = "/dashboard/:id";
@@ -19,7 +22,7 @@ const Login = () => {
       setError("Please fill out the missing fields");
     } else {
       try {
-        const response = await axios.post("http://localhost:5143/api/login", {
+        const response = await axios.post(`${API_BASE_URL}/api/login`, {
           email,
           password,
         });

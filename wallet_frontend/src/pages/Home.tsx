@@ -21,9 +21,10 @@ const Home = () => {
   const [amount, setAmount] = useState<number>(0);
   const [message, setMessage] = useState<string>("");
 
+  const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
   useEffect(() => {
     // Fetch all users
-    fetch("http://localhost:5143/api/user")
+    fetch(`${API_BASE_URL}/api/user`)
       .then((res) => res.json())
       .then((data) => setUsers(data))
       .catch((err) => console.error("Error fetching users:", err));
@@ -37,7 +38,7 @@ const Home = () => {
       return;
     }
 
-    const response = await fetch("http://localhost:5143/transfer", {
+    const response = await fetch(`${API_BASE_URL}/transfer`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
