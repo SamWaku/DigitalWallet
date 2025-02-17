@@ -142,16 +142,16 @@ The application will be available at `http://localhost:5173/`
 ### Authentication
 
 ```
-POST /api/auth/register
-POST /api/auth/login
+POST /api/register
+POST /api/login
 ```
 
 ### Wallet
 
 ```
-GET /api/wallet
-GET /api/wallet/transactions
-POST /api/wallet/transfer
+GET /api/wallet/user/{userId}
+GET /wallet-transactions/{userId}
+POST /transfer
 ```
 
 ## Environment Variables
@@ -182,7 +182,7 @@ BACKEND_API_URL=http://localhost:5143/api
 
    - Entity Framework Core for database operations
    - JWT for authentication
-   - AutoMapper for object mapping
+   - Mappers(Manual) for object mapping
    - Repository pattern for data access
 
 2. The frontend uses:
