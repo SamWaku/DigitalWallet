@@ -173,7 +173,7 @@ POST /transfer
 ### Frontend (.env)
 
 ```
-BACKEND_API_URL=http://localhost:5143/api
+VITE_API_BASE_URL=http://localhost:5143
 ```
 
 ## Development Notes
