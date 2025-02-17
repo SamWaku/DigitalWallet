@@ -13,7 +13,7 @@ A full-stack digital wallet application built with React frontend and .NET backe
 
 ```
 DigitalWallet/
-├── wallet_frontend/          # React frontend application
+├── wallet_frontend/       # React frontend application
 └── dee_backend/           # .NET backend application
 ```
 
